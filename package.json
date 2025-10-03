@@ -79,7 +79,7 @@
     "prepublishOnly": "run-p build",
     "version": "is-prerelease || npm run changelog && node build/readme-version.js && git add CHANGELOG.md README.md",
     "zip": "cd dist && cross-env bestzip \"./video-js-${npm_package_version}.zip\" * && cd ..",
-    "build:dist": "npm-run-all clean lint-errors build:js build:css build:lang build:types"
+    "build:dist": "npm-run-all -s clean lint-errors build:js build:css build:lang build:types minify:js"
   },
   "repository": {
     "type": "git",
